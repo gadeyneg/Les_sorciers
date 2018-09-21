@@ -42,7 +42,9 @@ public class Main {
             while(a==b){
                 b = (int) (Math.random() * 10);
             }
-            liste[a].attaque(liste[b]);
+            if(!(liste[a].mort()&liste[b].mort())){
+                liste[a].attaque(liste[b]);
+            }
             if (liste[a].mort()) {
                 if (a > 4) {
                     n--;
